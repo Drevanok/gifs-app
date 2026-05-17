@@ -1,12 +1,10 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "*",
     "rootDir": "./src",
-    "ignoreDeprecations": "6.0",
     "paths": {
       "@environments/*": [
-        "src/environments/*"
+        "./src/environments/*"
       ]
     },
     "strict": true,
@@ -20,20 +18,5 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "preserve"
-  },
-  "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false,
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
-  },
-  "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.spec.json"
-    }
-  ]
+  }
 }
