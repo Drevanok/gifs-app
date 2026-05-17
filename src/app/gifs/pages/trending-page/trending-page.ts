@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { GifListComponent } from '../../components/gif-list/gif-list';
+import { GifService } from '../../services/gifs';
 
 const imageUrls: string[] = [
   "https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg",
@@ -21,6 +22,8 @@ const imageUrls: string[] = [
   imports: [GifListComponent],
   templateUrl: './trending-page.html',
 })
-export default class TrendingPage { 
+export default class TrendingPage {
   gifs = imageUrls;
+
+  gifsService = inject(GifService);
 }
