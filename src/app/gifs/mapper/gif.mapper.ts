@@ -6,7 +6,7 @@ export class GifMapper {
         return {
             id: item.id,
             title: item.title,
-            url: item.images.original.url,
+            url: item.images.fixed_width.webp,
         }
     }
 
