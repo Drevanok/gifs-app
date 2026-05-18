@@ -7,8 +7,6 @@ import { GiphyResponse } from '../interfaces/giphy-data.interface';
 import { Gif } from '../interfaces/gif.interface';
 import { GifMapper } from '../mapper/gif.mapper';
 import { map, Observable, tap } from 'rxjs';
-import GifHistory from '../pages/gif-history/gif-history';
-
 
 @Injectable({
   providedIn: 'root',
@@ -22,6 +20,14 @@ export class GifService {
 
   trendingGifsLoading = signal(true);
   searchGidsLoading = signal(true);
+  trendingGifGroup = computed<Gif[][]>(() => {
+    const groups = [];
+    for (let i = 0; i < this.trendingGifs().length; i += 3) {
+      groups.push(this.trendingGifs().slice(i, i + 3));
+    }
+
+    return groups;
+  })
 
   searchHistory = signal<Record<string, Gif[]>>(
     JSON.parse(localStorage.getItem('gifs') ?? '{}')
