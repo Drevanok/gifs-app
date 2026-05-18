@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import DashboardPage from './gifs/pages/dashboard-page/dashboard-page';
 
 export const routes: Routes = [
 
@@ -15,6 +14,10 @@ export const routes: Routes = [
             {
                 path: 'search',
                 loadComponent: () => import('./gifs/pages/search-page/search-page'),
+            },
+            {
+                path: 'history/:query',
+                loadComponent: () => import('./gifs/pages/gif-history/gif-history'),
             },
             {
                 path: '**',
